@@ -24,6 +24,16 @@ fn main() {
     let insert_query = "INSERT INTO CatsAndOwners(CatID, CatName, CatAge, CatColor, CatOwnerName, City)
 VALUES
 (2, 'Белла', 7, 'Белая', 'Максим', 'Саратов');";
+    let create_query = "CREATE TABLE users
+(
+id U_BIGINT PRIMARY NOTNULL IDENTITY,
+name TEXT NOTNULL,
+age U_SHORT NOTNULL,
+phone TEXT NOTNULL,
+email TEXT,
+money DOUBLE
+);";
+    let create_query1 = "CREATE DATABASE test;";
     let queries = vec![select_query,
                        select_query1,
                        select_query2,
@@ -31,7 +41,10 @@ VALUES
                        select_query4,
                        select_query5,
 
-                       insert_query];
+                       insert_query,
+
+                       create_query,
+                       create_query1];
 
     for q in queries {
         let mut lexer = Lexer::new(q);
